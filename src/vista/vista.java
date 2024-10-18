@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
-/**
- *
- * @author ANDRES
- */
 public class vista extends javax.swing.JFrame {
 
     /**
@@ -26,7 +19,7 @@ public class vista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         lblDocumento = new javax.swing.JLabel();
         lblDirrecion = new javax.swing.JLabel();
@@ -37,7 +30,7 @@ public class vista extends javax.swing.JFrame {
         txtLugarDeProcedencia = new javax.swing.JLabel();
         txtDocuemento = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        txtDirrecion = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         txtGenero = new javax.swing.JTextField();
         txtNacimiento = new javax.swing.JTextField();
@@ -58,8 +51,9 @@ public class vista extends javax.swing.JFrame {
         txtEstadoClinica = new javax.swing.JTextField();
         txtNombreClinica = new javax.swing.JTextField();
         lblNombreClinica = new javax.swing.JLabel();
-        txtDirrecionClinica = new javax.swing.JTextField();
+        txtDireccionClinica = new javax.swing.JTextField();
         btnRegistarPaciente = new javax.swing.JButton();
+        btnRegistarPersonal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,9 +87,9 @@ public class vista extends javax.swing.JFrame {
             }
         });
 
-        txtDirrecion.addActionListener(new java.awt.event.ActionListener() {
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDirrecionActionPerformed(evt);
+                txtDireccionActionPerformed(evt);
             }
         });
 
@@ -109,7 +103,7 @@ public class vista extends javax.swing.JFrame {
 
         lblLugarTratamiento.setText("Lugar tratamiento");
 
-        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "POSITIVO", "NEGATIVO", "RECUPERADO", "SOSPECHOSO", "MUERTO" }));
 
         lblFechaDeLaPrueba.setText("Fecha de la prueba");
 
@@ -134,7 +128,7 @@ public class vista extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtDocuemento)
                     .addComponent(txtNombre)
-                    .addComponent(txtDirrecion)
+                    .addComponent(txtDireccion)
                     .addComponent(txtTelefono)
                     .addComponent(txtGenero)
                     .addComponent(txtNacimiento)
@@ -158,7 +152,7 @@ public class vista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDirrecion, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDirrecion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,7 +190,7 @@ public class vista extends javax.swing.JFrame {
 
         lblFechaPrueba.setText("Fecha de la prueba");
 
-        cmbPersonal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbPersonal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MEDICO", "ENFERMERO", "AUXILIAR", "ADMINISTRATIVO", "GENERAL" }));
 
         lblEstadoClinica.setText("Estado");
 
@@ -214,7 +208,7 @@ public class vista extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblDirrecionClinica, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56)
-                        .addComponent(txtDirrecionClinica, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
+                        .addComponent(txtDireccionClinica, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblPersonal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -224,8 +218,8 @@ public class vista extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtFechaPrueba)
-                            .addComponent(txtEstadoClinica, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                            .addComponent(txtNombreClinica, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                            .addComponent(txtEstadoClinica)
+                            .addComponent(txtNombreClinica)
                             .addComponent(cmbPersonal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -247,7 +241,7 @@ public class vista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDirrecionClinica, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDirrecionClinica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDireccionClinica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombreClinica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,19 +255,27 @@ public class vista extends javax.swing.JFrame {
             }
         });
 
+        btnRegistarPersonal.setText("Registar Personal");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnRegistarPersonal)
+                                .addGap(120, 120, 120))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
+                        .addGap(115, 115, 115)
                         .addComponent(btnRegistarPaciente)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
@@ -284,13 +286,14 @@ public class vista extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(30, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84))))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistarPersonal)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -300,14 +303,14 @@ public class vista extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -321,9 +324,9 @@ public class vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void txtDirrecionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDirrecionActionPerformed
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDirrecionActionPerformed
+    }//GEN-LAST:event_txtDireccionActionPerformed
 
     private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
         // TODO add your handling code here:
@@ -370,9 +373,9 @@ public class vista extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistarPaciente;
+    public javax.swing.JButton btnRegistarPersonal;
     public javax.swing.JComboBox<String> cmbEstado;
     public javax.swing.JComboBox<String> cmbPersonal;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     public javax.swing.JLabel lblDirrecion;
@@ -389,8 +392,8 @@ public class vista extends javax.swing.JFrame {
     public javax.swing.JLabel lblNombreClinica;
     public javax.swing.JLabel lblPersonal;
     public javax.swing.JLabel lblTelefono;
-    public javax.swing.JTextField txtDirrecion;
-    public javax.swing.JTextField txtDirrecionClinica;
+    public javax.swing.JTextField txtDireccion;
+    public javax.swing.JTextField txtDireccionClinica;
     public javax.swing.JTextField txtDocuemento;
     public javax.swing.JTextField txtEstadoClinica;
     public javax.swing.JTextField txtFechaDeLaPrueba;

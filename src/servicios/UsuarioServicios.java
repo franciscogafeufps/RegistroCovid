@@ -13,11 +13,18 @@ public class UsuarioServicios {
       try{
          Connection conexion = Conexion.obtener();
          PreparedStatement consulta;
-         consulta = conexion.prepareStatement("INSERT INTO producto (documento, nombre, telefono, genero, fechaNacimiento) "
-                 + "VALUES(?, ?, ?,?)");        
+         consulta = conexion.prepareStatement("INSERT INTO paciente (documento, nombre, direccion, telefono, genero, fecha_nacimiento, lugar_procedencia, fecha_deteccion, estado, casa) "
+                 + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");        
          consulta.setString(1, paciente.getDocumento());
          consulta.setString(2, paciente.getNombre());
-         consulta.setString(3, paciente.getTelefono());
+         consulta.setString(3, paciente.getDireccion());
+         consulta.setString(4, paciente.getTelefono());
+         consulta.setString(5, paciente.getGenero());
+         consulta.setDate(6, paciente.getFechaNacimiento());
+         consulta.setString(7, paciente.getLugarProcedencia().toString());
+         consulta.setDate(8, paciente.getFechaDeteccion());
+         consulta.setString(9, paciente.getEstado().toString());
+         consulta.setBoolean(10, paciente.isCasa());
          
          consulta.executeUpdate();
       }catch(SQLException ex){

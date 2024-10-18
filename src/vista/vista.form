@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="268" max="32767" attributes="0"/>
+              <EmptySpace pref="243" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -35,7 +35,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -49,20 +49,33 @@
           </Border>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnRegistarPersonal" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                           <Component id="btnRegistarPaciente" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -77,16 +90,17 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="30" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnRegistarPaciente" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnRegistarPaciente" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnRegistarPersonal" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -122,7 +136,7 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtDocuemento" max="32767" attributes="0"/>
                           <Component id="txtNombre" max="32767" attributes="0"/>
-                          <Component id="txtDirrecion" max="32767" attributes="0"/>
+                          <Component id="txtDireccion" max="32767" attributes="0"/>
                           <Component id="txtTelefono" max="32767" attributes="0"/>
                           <Component id="txtGenero" max="32767" attributes="0"/>
                           <Component id="txtNacimiento" max="32767" attributes="0"/>
@@ -151,7 +165,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblDirrecion" min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="txtDirrecion" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="txtDireccion" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -266,9 +280,9 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDirrecion">
+            <Component class="javax.swing.JTextField" name="txtDireccion">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDirrecionActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDireccionActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -321,11 +335,12 @@
             <Component class="javax.swing.JComboBox" name="cmbEstado">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="POSITIVO"/>
+                    <StringItem index="1" value="NEGATIVO"/>
+                    <StringItem index="2" value="RECUPERADO"/>
+                    <StringItem index="3" value="SOSPECHOSO"/>
+                    <StringItem index="4" value="MUERTO"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -367,7 +382,7 @@
                           <Group type="102" attributes="0">
                               <Component id="lblDirrecionClinica" min="-2" pref="111" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="txtDirrecionClinica" pref="103" max="32767" attributes="0"/>
+                              <Component id="txtDireccionClinica" pref="128" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -379,8 +394,8 @@
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="txtFechaPrueba" max="32767" attributes="0"/>
-                                  <Component id="txtEstadoClinica" pref="103" max="32767" attributes="0"/>
-                                  <Component id="txtNombreClinica" pref="103" max="32767" attributes="0"/>
+                                  <Component id="txtEstadoClinica" max="32767" attributes="0"/>
+                                  <Component id="txtNombreClinica" max="32767" attributes="0"/>
                                   <Component id="cmbPersonal" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -410,7 +425,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblDirrecionClinica" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="txtDirrecionClinica" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtDireccionClinica" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -446,11 +461,12 @@
             <Component class="javax.swing.JComboBox" name="cmbPersonal">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="MEDICO"/>
+                    <StringItem index="1" value="ENFERMERO"/>
+                    <StringItem index="2" value="AUXILIAR"/>
+                    <StringItem index="3" value="ADMINISTRATIVO"/>
+                    <StringItem index="4" value="GENERAL"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -493,7 +509,7 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtDirrecionClinica">
+            <Component class="javax.swing.JTextField" name="txtDireccionClinica">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -507,6 +523,14 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistarPacienteActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnRegistarPersonal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Registar Personal"/>
+          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
