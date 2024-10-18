@@ -2,6 +2,8 @@
 package modelo;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Persona {
     
@@ -11,17 +13,21 @@ public class Persona {
     private String telefono;
     private String genero;
     private Date fechaNacimiento;
+    private List<Paciente> contactos = new ArrayList<>();
 
     public Persona() {
     }
 
-    public Persona(String documento, String nombre, String direccion, String telefono, String genero, Date fechaNacimiento) {
+    public Persona(String documento, String nombre, String direccion, String telefono, String genero, Date fechaNacimiento, List<Paciente> contactos) {
         this.documento = documento;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.genero = genero;
         this.fechaNacimiento = fechaNacimiento;
+        if (contactos != null) {
+            this.contactos = contactos;
+        }
     }
 
     public String getDocumento() {
@@ -72,6 +78,20 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
     
+    public List<Paciente> getContactos() {
+        return contactos;
+    }
+
+    public void setContactos(Paciente contactos) {
+        this.contactos.add(contactos);
+    }
     
-    
+    public void addContacto(Paciente contacto) {
+        this.contactos.add(contacto); // Agrega un contacto a la lista
+    }
+   
+    public void setContactos(List<Paciente> contactos) {
+        this.contactos = contactos; // Reemplaza la lista de contactos
+    }
+        
 }
