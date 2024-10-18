@@ -1,12 +1,12 @@
 
-package Vista;
+package vista;
 
-public class vista extends javax.swing.JFrame {
+public class Vista extends javax.swing.JFrame {
 
     /**
      * Creates new form vista
      */
-    public vista() {
+    public Vista() {
         initComponents();
     }
 
@@ -33,7 +33,7 @@ public class vista extends javax.swing.JFrame {
         txtDireccion = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
         txtGenero = new javax.swing.JTextField();
-        txtNacimiento = new javax.swing.JTextField();
+        txtFechaNacimiento = new javax.swing.JTextField();
         txtLugarProcedencia = new javax.swing.JTextField();
         lblEstado = new javax.swing.JLabel();
         lblLugarTratamiento = new javax.swing.JLabel();
@@ -93,9 +93,9 @@ public class vista extends javax.swing.JFrame {
             }
         });
 
-        txtNacimiento.addActionListener(new java.awt.event.ActionListener() {
+        txtFechaNacimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNacimientoActionPerformed(evt);
+                txtFechaNacimientoActionPerformed(evt);
             }
         });
 
@@ -131,7 +131,7 @@ public class vista extends javax.swing.JFrame {
                     .addComponent(txtDireccion)
                     .addComponent(txtTelefono)
                     .addComponent(txtGenero)
-                    .addComponent(txtNacimiento)
+                    .addComponent(txtFechaNacimiento)
                     .addComponent(txtLugarProcedencia)
                     .addComponent(txtLugarTratamiento)
                     .addComponent(cmbEstado, 0, 92, Short.MAX_VALUE)
@@ -164,7 +164,7 @@ public class vista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtLugarDeProcedencia)
@@ -328,9 +328,9 @@ public class vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
 
-    private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
+    private void txtFechaNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaNacimientoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNacimientoActionPerformed
+    }//GEN-LAST:event_txtFechaNacimientoActionPerformed
 
     private void btnRegistarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarPacienteActionPerformed
         // TODO add your handling code here:
@@ -353,20 +353,20 @@ public class vista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new vista().setVisible(true);
+                new Vista().setVisible(true);
             }
         });
     }
@@ -397,12 +397,12 @@ public class vista extends javax.swing.JFrame {
     public javax.swing.JTextField txtDocuemento;
     public javax.swing.JTextField txtEstadoClinica;
     public javax.swing.JTextField txtFechaDeLaPrueba;
+    public javax.swing.JTextField txtFechaNacimiento;
     public javax.swing.JTextField txtFechaPrueba;
     public javax.swing.JTextField txtGenero;
     public javax.swing.JLabel txtLugarDeProcedencia;
     public javax.swing.JTextField txtLugarProcedencia;
     public javax.swing.JTextField txtLugarTratamiento;
-    public javax.swing.JTextField txtNacimiento;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtNombreClinica;
     public javax.swing.JTextField txtTelefono;

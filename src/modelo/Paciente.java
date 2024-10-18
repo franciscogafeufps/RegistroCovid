@@ -56,7 +56,7 @@ public class Paciente extends Persona{
         this.estado = estado;
     }
 
-    public boolean isCasa() {
+    public boolean getCasa() {
         return casa;
     }
 

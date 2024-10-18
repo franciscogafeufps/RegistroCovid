@@ -1,69 +1,105 @@
 
 package controlador;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import servicios.UsuarioServicios;
 import servicios.PersonalServicios;
 import modelo.Paciente;
 import modelo.PersonalSalud;
 import modelo.LugarProcedencia;
-import modelo.Estado;
 import modelo.Especialidad;
 import modelo.Clinica;
+import vista.Vista;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class Control {
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import modelo.Estado;
+
+public class Control implements ActionListener {
     
-    private UsuarioServicios usuarioServicios;
-    private PersonalServicios personalServicios;
-
-    public Control() {
-        usuarioServicios = new UsuarioServicios();
-        personalServicios = new PersonalServicios();
+    private Paciente paciente;
+    private PersonalSalud personalSalud;
+    private Vista formulario;
+    private UsuarioServicios us;
+    private PersonalServicios ps;
+    
+     public Control(Paciente paciente, PersonalSalud personalSalud, Vista formulario, UsuarioServicios us, PersonalServicios ps) {
+        this.paciente = paciente;
+        this.personalSalud = personalSalud;
+        this.formulario = formulario;
+        this.us = us;
+        this.ps = ps;
+        
+        this.formulario.btnRegistarPaciente.addActionListener(this);
+        this.formulario.btnRegistarPersonal.addActionListener(this);
+    }
+     
+    public void iniciar(){
+        
+        formulario.setTitle("Pacientes");
+        formulario.setLocationRelativeTo(null);
+               
     }
 
-    public void registrarPaciente(String documento, String nombre, String direccion, String telefono,
-                                  String genero, java.sql.Date fechaNacimiento, 
-                                  String lugarProcedencia, java.sql.Date fechaDeteccion,
-                                  String estado, boolean casa) {
-        Paciente paciente = new Paciente();
-        paciente.setDocumento(documento);
-        paciente.setNombre(nombre);
-        paciente.setDireccion(direccion);
-        paciente.setTelefono(telefono);
-        paciente.setGenero(genero);
-        paciente.setFechaNacimiento(fechaNacimiento);
-        paciente.setLugarProcedencia(LugarProcedencia.valueOf(lugarProcedencia.toUpperCase())); 
-        paciente.setFechaDeteccion(fechaDeteccion);
-        paciente.setEstado(Estado.valueOf(estado.toUpperCase())); 
-        paciente.setCasa(casa);
-        
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    if (e.getSource() == formulario.btnRegistarPaciente) {
+        System.out.println("estoy guardando");
+
+        // Obtener el valor de texto del campo txtNacimiento
+        String fechaNacimientoTexto = formulario.txtFechaNacimiento.getText();
+        String fechaPruebaTexto = formulario.txtFechaPrueba.getText();
+
+        // Definir el formato de la fecha (ejemplo: "dd/MM/yyyy")
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato2 = new SimpleDateFormat("dd/MM/yyyy");
+
         try {
-            usuarioServicios.registrarPaciente(paciente);
-            JOptionPane.showMessageDialog(null, "Paciente registrado con éxito.");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar el paciente: " + e.getMessage());
+            
+            String nombreLugarProcedencia = formulario.txtLugarProcedencia.getText();
+            LugarProcedencia lugarProcedencia = new LugarProcedencia();
+            lugarProcedencia.setNombre(nombreLugarProcedencia);
+            
+            String estadoSeleccionado = formulario.cmbEstado.getSelectedItem().toString();
+            Estado estado = Estado.valueOf(estadoSeleccionado.toUpperCase());
+            
+            
+            
+            // Convertir el texto a un objeto Date
+            Date fechaNacimiento = formato.parse(fechaNacimientoTexto);
+            Date fechaPrueba = formato2.parse(fechaPruebaTexto);
+            
+            
+           
+            paciente.setDocumento(formulario.txtDocuemento.getText());
+            paciente.setNombre(formulario.txtNombre.getText());
+            paciente.setDireccion(formulario.txtDireccion.getText());
+            paciente.setTelefono(formulario.txtTelefono.getText());
+            paciente.setGenero(formulario.txtGenero.getText());
+            paciente.setFechaNacimiento((java.sql.Date) fechaNacimiento);
+            paciente.setLugarProcedencia(lugarProcedencia);
+            paciente.setFechaDeteccion((java.sql.Date) fechaPrueba);
+            paciente.setEstado(estado);
+            paciente.setCasa(formulario.txtLugarTratamiento.getText());
+
+            
+            us.registrarPaciente(paciente);
+
+            JOptionPane.showMessageDialog(formulario, "Paciente registrado exitosamente");
+
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(formulario, "Formato de fecha incorrecto. Use dd/MM/yyyy.", "Error", JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Control.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(formulario, "Error al registrar paciente", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
-
-    public void registrarPersonalSalud(String documento, String nombre, String direccion, String telefono,
-                                        String genero, java.sql.Date fechaNacimiento,
-                                        String especialidad, String clinicaNombre, String clinicaDireccion) {
-        PersonalSalud personal = new PersonalSalud();
-        personal.setDocumento(documento);
-        personal.setNombre(nombre);
-        personal.setDireccion(direccion);
-        personal.setTelefono(telefono);
-        personal.setGenero(genero);
-        personal.setFechaNacimiento(fechaNacimiento);
-        personal.setEspecialidad(Especialidad.valueOf(especialidad.toUpperCase())); 
-        personal.setClinica(new Clinica(clinicaNombre, clinicaDireccion));
-        
-        try {
-            personalServicios.registrarPersonalSalud(personal);
-            JOptionPane.showMessageDialog(null, "Personal de salud registrado con éxito.");
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar el personal de salud: " + e.getMessage());
         }
     }
 }

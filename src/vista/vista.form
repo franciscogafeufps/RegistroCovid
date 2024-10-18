@@ -139,7 +139,7 @@
                           <Component id="txtDireccion" max="32767" attributes="0"/>
                           <Component id="txtTelefono" max="32767" attributes="0"/>
                           <Component id="txtGenero" max="32767" attributes="0"/>
-                          <Component id="txtNacimiento" max="32767" attributes="0"/>
+                          <Component id="txtFechaNacimiento" max="32767" attributes="0"/>
                           <Component id="txtLugarProcedencia" max="32767" attributes="0"/>
                           <Component id="txtLugarTratamiento" alignment="0" max="32767" attributes="0"/>
                           <Component id="cmbEstado" alignment="0" pref="92" max="32767" attributes="0"/>
@@ -180,7 +180,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblNacimiento" min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="txtNacimiento" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="txtFechaNacimiento" min="-2" pref="22" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -298,9 +298,9 @@
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNacimiento">
+            <Component class="javax.swing.JTextField" name="txtFechaNacimiento">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNacimientoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaNacimientoActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

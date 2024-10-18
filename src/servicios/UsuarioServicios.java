@@ -24,7 +24,7 @@ public class UsuarioServicios {
          consulta.setString(7, paciente.getLugarProcedencia().toString());
          consulta.setDate(8, paciente.getFechaDeteccion());
          consulta.setString(9, paciente.getEstado().toString());
-         consulta.setBoolean(10, paciente.isCasa());
+         consulta.setBoolean(10, paciente.getCasa());
          
          consulta.executeUpdate();
       }catch(SQLException ex){
