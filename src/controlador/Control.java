@@ -75,6 +75,8 @@ public class Control implements ActionListener {
             Date fechaNacimiento = formato.parse(fechaNacimientoTexto);
             Date fechaPrueba = formato2.parse(fechaPruebaTexto);
             
+            String lugarTratamientoTexto = formulario.txtLugarTratamiento.getText().trim();
+            boolean casa = lugarTratamientoTexto.equalsIgnoreCase("sí") || lugarTratamientoTexto.equalsIgnoreCase("si");
             
            
             paciente.setDocumento(formulario.txtDocuemento.getText());
@@ -86,7 +88,7 @@ public class Control implements ActionListener {
             paciente.setLugarProcedencia(lugarProcedencia);
             paciente.setFechaDeteccion((java.sql.Date) fechaPrueba);
             paciente.setEstado(estado);
-            paciente.setCasa(formulario.txtLugarTratamiento.getText());
+            paciente.setCasa(casa);
 
             
             us.registrarPaciente(paciente);
